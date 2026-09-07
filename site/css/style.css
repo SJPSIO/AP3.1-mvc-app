@@ -1,0 +1,58 @@
+
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; margin: 0; color: #222; background: #f8f9fa; font-size: 0.9em; line-height: 1.5; }
+.site-header { background: #2c3e50; }
+.site-nav { max-width: 1000px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.site-nav a { color: white; text-decoration: none; }
+.site-nav-element { font-weight: bold; overflow-wrap: anywhere; } /* Permet de couper les mots longs pour éviter le débordement */
+
+.page-content { width: 100%; max-width: 1000px; min-height: calc(100vh - 133px); margin: 0 auto; padding: 40px 24px; }
+h1 { line-height: 1.2; margin-top: 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #ddd; padding: 8px; }
+td { text-align: left; font-size: 0.8em; }
+th { background: #f4f4f4; text-align: center; }
+
+td.colPrix { width: 10%; text-align: right; }
+td.colCommentaire { width: 10%; }
+td.colActions { width: 35%;text-align: center;}
+
+a.button { display: inline-block; padding: 4px 10px; text-decoration: none; color: white; border-radius: 4px; font-size: 14px; }
+a.edit { background: #3498db; }
+a.delete { background: #e74c3c; margin-left: 5px; }
+.inline-form { display: inline; }
+.inline-form button[type="submit"]{ border: none; background: none; padding: 0; margin: 0; cursor: pointer; }
+button.button { padding: 4px 10px; color: white; border-radius: 4px; font-size: 14px; }
+
+.icon { width: 16px; height: 16px; vertical-align: middle; }
+
+a.add { background: #198754; display: inline-block; margin-bottom: 15px; padding: 8px 14px; border-radius: 4px; color: white; text-decoration: none; }
+
+.site-footer { padding: 20px 24px; text-align: center; color: #666; background: #ecf0f1; }
+.site-footer p { margin: 0; }
+
+.product-form { width: 100%; max-width: 500px; }
+.product-form label { display: block; margin-top: 12px; font-weight: bold; }
+.radio-option label{ display: inline; font-weight: normal; margin-left: 4px; }
+
+.product-form input,
+.product-form textarea { width: 100%; max-width: 100%; padding: 8px; margin-top: 4px; border: 1px solid #bbb; border-radius: 4px; font: inherit; }
+.product-form input[type="radio"] { width: auto; margin-top: 0; }
+.product-form button { margin-top: 16px; padding: 8px 16px; color: white; border: none; border-radius: 4px; cursor: pointer; }
+.product-form button[type="submit"] { display: block; background: #198754; }
+.product-form.edit-form button[type="submit"] { background: #3498db; }
+.error { color: #e74c3c; }
+
+@media (max-width: 600px) {
+	body { font-size: 0.5em; }
+	.site-nav { padding: 14px 16px; align-items: flex-start; flex-direction: column; gap: 12px; }
+	.page-content { padding: 28px 16px; }
+	table { display: block; overflow-x: auto; white-space: nowrap; font-size: 0.5em; }
+	th, td { padding: 3px 5px; }
+	a.button,
+	button.button { padding: 3px 6px; font-size: 12px; }
+	.product-form input,
+	.product-form textarea,
+	.product-form button { font-size: 16px; }
+	a.add { width: 100%; text-align: center; }
+}
