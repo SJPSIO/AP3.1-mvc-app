@@ -1,8 +1,8 @@
 #!/bin/bash
 # script pour démarrer les serveurs PHP et MariaDB
 
-# Définir le chemin vers les dossiers web et web/API
-WEB_DIR="site"
+# Définir le chemin vers le dossier public de l'application web
+WEB_DIR="site/"
 DOC_DIR="documentation"
 
 phpMyAdmin_DIR="../../usr/src/phpmyadmin"
@@ -19,9 +19,9 @@ echo "Démarrage du service MariaDB..."
 sudo service mariadb start
 
 # Executer le script d'initialisation de la base de données database/scripts/initDBB.sh
-# echo "Exécution du script initDBB.sh..."
-# sudo chmod +x ./database/scripts/initDBB.sh
-# sudo ./database/scripts/initDBB.sh
+# echo "Exécution du script initBDD.sh..."
+# sudo chmod +x ./database/scripts/initBDD.sh
+# sudo ./database/scripts/initBDD.sh
 
 # Fonction pour vérifier si un port est utilisé
 is_port_in_use() {

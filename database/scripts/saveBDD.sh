@@ -1,8 +1,8 @@
 #!/bin/bash
-echo "Exécution du script saveDBB.sh..."
+echo "Exécution du script saveBDD.sh..."
 
 # Variables de configuration
-DB_NAME="mvc-app"
+DB_NAME="mvc_app"
 DB_USER="admin"
 DB_PASSWORD="admin_password"
 BACKUP_DIR="database/sources-sql"

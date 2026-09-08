@@ -1,17 +1,23 @@
 #!/bin/bash
-echo "Exécution du script reloadDBB.sh..."
+echo "Exécution du script reloadBDD.sh..."
 
 # Variables de configuration
-DB_NAME="mvc-app"
+DB_NAME="mvc_app"
 DB_USER="admin"
 DB_PASSWORD="admin_password"
 BACKUP_DIR="database/sources-sql"
-BACKUP_FILE="$BACKUP_DIR/scriptDeLaBaseDeDonnees.sql"
+BACKUP_FILE="$BACKUP_DIR/mvc_app.sql"
+INIT_FILE="$BACKUP_DIR/scriptDesTablesDeLaBaseDeDonnees.sql"
+GOOD_FILE="$BACKUP_FILE"
 
 # Vérifier si le fichier de sauvegarde existe
 if [ ! -f "$BACKUP_FILE" ]; then
   echo "Le fichier de sauvegarde $BACKUP_FILE n'existe pas."
-  exit 1
+  GOOD_FILE="$INIT_FILE"
+  if [ ! -f "$INIT_FILE" ]; then
+    echo "Le fichier de départ $INIT_FILE n'existe pas."
+    exit 1
+  fi
 fi
 
 # Vider toutes les tables de la base de données existante
@@ -22,7 +28,7 @@ for TABLE in $TABLES; do
 done
 
 # Restaurer la base de données à partir du fichier de sauvegarde
-echo "Restauration de la base de données $DB_NAME à partir de $BACKUP_FILE..."
-mysql -u $DB_USER -p$DB_PASSWORD $DB_NAME < $BACKUP_FILE
+echo "Restauration de la base de données $DB_NAME à partir de $GOOD_FILE ..."
+mysql -u $DB_USER -p$DB_PASSWORD $DB_NAME < $GOOD_FILE
 
 echo "La base de données $DB_NAME a été remplacée avec succès."

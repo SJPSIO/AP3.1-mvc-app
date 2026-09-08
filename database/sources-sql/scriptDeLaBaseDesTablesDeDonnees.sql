@@ -15,3 +15,6 @@ INSERT INTO produits (nom, description, prix) VALUES
 ('Clavier mécanique', 'Clavier RGB switch rouge', 79.99),
 ('Souris sans fil', 'Souris ergonomique 1600 DPI', 29.90),
 ('Écran 27 pouces', 'Dalle IPS 144Hz', 249.00);
+
+-- Attribution de droits d'accès CRUD sur la table produits
+GRANT SELECT, INSERT, UPDATE, DELETE ON `mvc_app`.`produits` TO 'WebMvcApp'@'%';

@@ -2,7 +2,7 @@
 echo "Exécution du script initDBB.sh..."
 
 SQL_FILE_ENV="database/sources-sql/init-BDD.sql"
-SQL_FILE_BDD="database/sources-sql/scriptDeLaBaseDeDonnees.sql"
+SQL_FILE_BDD="database/sources-sql/scriptDesTablesDeLaBaseDeDonnees.sql"
 
 # Créer la base de données à partir du fichier SQL
 echo "Création de la base de données à partir de $SQL_FILE_ENV..."
