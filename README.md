@@ -52,6 +52,7 @@ Si les scripts n'ont pas les bonnes permissions, utilisez la commande chmod pour
 
 2. **Ouvrir le service php dans un navigateur** :
    - Accédez à `http://localhost:8000` pour voir la page d'accueil de l'API.
+   - Compléter avec le sous-dossier éventuel qui est la partie publique : /public ici
 
 3. **Accèder à la BDD** :
    - avec phpMyAdmin sur le port 8080
